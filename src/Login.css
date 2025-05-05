@@ -1,0 +1,16 @@
+.input-gmail{
+    width: 53vh;
+    height: 4vh;
+    background-color: white;
+    margin-bottom: 8px;
+    margin-left: 9px;
+    color: black;
+}
+.input-pass{
+    width: 53vh;
+    height: 4vh;
+    background-color: white;
+    margin-top: 8px;
+    margin-left: 9px;
+    color: black;
+}

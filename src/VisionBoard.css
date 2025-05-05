@@ -1,0 +1,123 @@
+.draggable-item {
+  position: absolute;
+  user-select: none;
+  touch-action: none;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.draggable-item.active {
+  z-index: 100;
+  box-shadow: 0 0 0 2px #4285f4;
+}
+
+.draggable-item img {
+  display: block;
+  object-fit: cover;
+  cursor: grabbing;
+}
+
+.draggable-item p {
+  margin: 0;
+  padding: 10px;
+  word-break: break-word;
+  font-size: clamp(12px, 2vw, 24px);
+  cursor: grabbing;
+}
+
+.resize-handle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: transparent;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.resize-handle:hover {
+  background: #4285f4;
+}
+
+.resize-n { top: -6px; left: 50%; transform: translateX(-50%); cursor: n-resize; }
+.resize-ne { top: -6px; right: -6px; cursor: ne-resize; }
+.resize-e { right: -6px; top: 50%; transform: translateY(-50%); cursor: e-resize; }
+.resize-se { bottom: -6px; right: -6px; cursor: se-resize; }
+.resize-s { bottom: -6px; left: 50%; transform: translateX(-50%); cursor: s-resize; }
+.resize-sw { bottom: -6px; left: -6px; cursor: sw-resize; }
+.resize-w { left: -6px; top: 50%; transform: translateY(-50%); cursor: w-resize; }
+.resize-nw { top: -6px; left: -6px; cursor: nw-resize; }
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: red;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.draggable-item:hover .delete-btn {
+  opacity: 1;
+}
+
+/* Add custom cursor styles for drag area */
+.drag-area {
+  cursor: grab;
+}
+
+.drag-area:active,
+.drag-area.grabbing {
+  cursor: grabbing;
+}
+
+@media (max-width: 480px) {
+  .resize-handle {
+    width: 16px;
+    height: 16px;
+  }
+  .resize-n { top: -8px; }
+  .resize-ne { top: -8px; right: -8px; }
+  .resize-e { right: -8px; }
+  .resize-se { bottom: -8px; right: -8px; }
+  .resize-s { bottom: -8px; }
+  .resize-sw { bottom: -8px; left: -8px; }
+  .resize-w { left: -8px; }
+  .resize-nw { top: -8px; left: -8px; }
+}
+/* ... Existing styles ... */
+
+/* Add custom cursor styles for drag area */
+.drag-area {
+  cursor: grab;
+}
+
+.drag-area:active,
+.drag-area.grabbing {
+  cursor: grabbing;
+}
+
+/* ... Existing styles ... */
+.drag-area {
+  cursor: -webkit-grab; /* Safari */
+  cursor: grab;
+  cursor: move; /* Fallback */
+}
+.drag-area:active,
+.drag-area.grabbing {
+  cursor: -webkit-grabbing; /* Safari */
+  cursor: grabbing;
+  cursor: move; /* Fallback */
+}
