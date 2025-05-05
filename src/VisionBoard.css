@@ -97,7 +97,7 @@
   .resize-w { left: -8px; }
   .resize-nw { top: -8px; left: -8px; }
 }
-/* ... Existing styles ... */
+
 
 /* Add custom cursor styles for drag area */
 .drag-area {
